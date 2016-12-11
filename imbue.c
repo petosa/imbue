@@ -13,8 +13,8 @@ int main(int argc, char *argv[]) {
   fp_dest = fopen("output.jpg", "wb");
 
   // Pipe in part 1 of jpg, up to size
-  if ((fp_base = fopen("part1.jpg", "rb")) == NULL) {
-    printf("part1.jpg is missing. Restore this file and try again.\n");
+  if ((fp_base = fopen("res/jpg/part1.jpg", "rb")) == NULL) {
+    printf("res/jpg/part1.jpg is missing. Restore this file and try again.\n");
     exit(1);
   }
   pipe_out(fp_base, fp_dest);
@@ -27,8 +27,8 @@ int main(int argc, char *argv[]) {
   pipe_short((short)16, fp_dest);
 
   // Pipe in part 2 of jpg, up to data
-  if ((fp_base = fopen("part2.jpg", "rb")) == NULL) {
-    printf("part2.jpg is missing. Restore this file and try again.\n");
+  if ((fp_base = fopen("res/jpg/part2.jpg", "rb")) == NULL) {
+    printf("res/jpg/part2.jpg is missing. Restore this file and try again.\n");
     exit(1);
   }
   pipe_out(fp_base, fp_dest);
@@ -42,8 +42,8 @@ int main(int argc, char *argv[]) {
   pipe_out(fp_inject, fp_dest);
   fclose(fp_inject);
 
-  if ((fp_base = fopen("part3.jpg", "rb")) == NULL) {
-    printf("part3.jpg is missing. Restore this file and try again.\n");
+  if ((fp_base = fopen("res/jpg/part3.jpg", "rb")) == NULL) {
+    printf("res/jpg/part3.jpg is missing. Restore this file and try again.\n");
     exit(1);
   }
   pipe_out(fp_base, fp_dest);
